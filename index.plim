@@ -6,11 +6,6 @@
   buildpath = 'buildpack/'
 
 
--def pivot()
-  section.slide.cover: div
-    img src="pictures/pivot.jpg" width="100%"
-
-
 doctype 5
 html lang="zh-hants"
   head
@@ -892,8 +887,8 @@ html lang="zh-hants"
         li 不流行做系統底層的記憶體操作
         li 最近才內建較完善的非同步支援
         li 在行動平台上的發展還有待努力
-        li 有些縣市的使用者群組還在成形
-        li 台灣業界、學界與政府的 Python 風潮也還在成形階段
+        li 部份縣市的使用者群組，以及
+          台灣業界、學界與政府的 Python 風潮也還在成形階段
 
     section.slide.shout: div
       h2 教 Python
