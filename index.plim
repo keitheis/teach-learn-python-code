@@ -495,7 +495,9 @@ html lang="zh-hants"
       h2 Cadence Meter with Raspberry Pi
         br by Hsin-Chieh Jennifer Ma
         br in Taiwan
-      <iframe width="560" height="315" src="http//www.youtube.com/embed/R0KIJ_nU9k0" frameborder="0" allowfullscreen></iframe>
+      p.text-center
+        img alt="" src="pictures/cadence.png" width="60%"
+      / <iframe width="560" height="315" src="http//www.youtube.com/embed/R0KIJ_nU9k0" frameborder="0" allowfullscreen></iframe>
           / autoplay="true"
       / video.cadencemeter(preload="auto"
           width="80%"
@@ -799,7 +801,7 @@ html lang="zh-hants"
       h2 男女比接近
         br `span.note 1 : 1`
 
-    section.slide.shout: div
+    section.slide.patch.shout: div
       h2.small 一個學習性別尊重
         br 溝通＆合作的環境
 
