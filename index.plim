@@ -2,7 +2,7 @@
 
 -py
   subject = u"程式設計教學之 Python 不完全解決方案"
-  livereload = True
+  livereload = False
   buildpath = 'buildpack/'
 
 
@@ -237,7 +237,7 @@ html lang="zh-hants"
         ,
         a.ref href='https://yang.keitheis.org' `code yang.keitheis.org`
       h3
-        img.pull-right alt="biideal, Taipei.py, PyCon APAC" src="pictures/working.jpg" width="80%"
+        img.pull-right alt="biideal, Taipei.py, PyCon APAC" src="pictures/Working.jpg" width="80%"
       br
       | @keitheis
       ,
@@ -890,10 +890,10 @@ html lang="zh-hants"
       .note 已知的不完美
       ul
         li 不流行做系統底層的記憶體操作
-        li 最近才加入較完善的非同步的支援
+        li 最近才內建較完善的非同步支援
         li 在行動平台上的發展還有待努力
-        li 有些縣市的使用者群組還未成形
-        li 台灣業界、學界與政府的腳步還在跟上
+        li 有些縣市的使用者群組還在成形
+        li 台灣業界、學界與政府的 Python 風潮也還在成形階段
 
     section.slide.shout: div
       h2 教 Python
