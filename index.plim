@@ -1,0 +1,932 @@
+-namespace module="plimsolls.formatters.code2html" name="code2html"
+
+-py
+  subject = u"程式設計教學之 Python 不完全解決方案"
+  livereload = True
+  buildpath = 'buildpack/'
+
+
+-def pivot()
+  section.slide.cover: div
+    img src="pictures/pivot.jpg" width="100%"
+
+
+doctype 5
+html lang="zh-hants"
+  head
+    title ${subject} -- Keith Yang
+    meta charset="utf-8"
+    meta name="viewport" content="width=792, user-scalable=no"
+    meta http-equiv="x-ua-compatible" content="ie=edge"
+    link rel="stylesheet" href="${buildpath}/shower-ribbon/styles/screen.css"
+    link rel="stylesheet" href="${buildpath}/font-awesome/css/font-awesome.min.css"
+    / link rel="stylesheet" media="all" href="${buildpath}/Han/han.css"
+    link rel="stylesheet" href="pygments.css"
+    script src="${buildpath}/jquery/dist/jquery.min.js"
+
+    -stylus
+      k_yellow = #FBDC59
+      k_red = #c23236
+      k_white = #FFFFFF
+      k_blue = #2082fb
+      .slide
+        font-family: "Trebuchet MS", "Source Han Sans TWHK", sans-serif
+        ul li
+          i.fa
+            text-indent 0
+          // strong a
+          //  color k_yellow
+        a
+          background none
+          color k_blue
+          &.hover
+            background linear-gradient(to top, currentcolor, $k_yellow 0.09em, transparent 0.09em, transparent) repeat-x scroll 0% 0% transparent
+        &.cover
+          background-color #fff
+
+        .text-left
+          text-align left
+        .text-center
+          text-align center
+        .text-right
+          text-align right
+
+        background-color k_white
+        color k_red
+        h2 
+          a img 
+            text-decoration none
+          
+          color k_red
+          &.footnote 
+            font-size 32px
+        
+        // h3  color k_white 
+        hr 
+          color k_yellow
+          border 4px solid k_yellow
+        
+        / .author 
+          color black
+          font-style italic
+        
+        i  font-style normal 
+        pre 
+          font-family monospace
+          line-height 40px
+        
+        .terminal 
+          padding 5px
+          font-family monospace
+          border-radius 5px 5px 5px 5px
+          background none repeat scroll 0% 0% rgb(39, 40, 34)
+          color rgb(248, 248, 242)
+        
+        code, .code 
+          font-size 1.2em
+          font-family monospace
+          color black
+          background none
+        
+        font-size 1.4em
+        .note 
+          color black
+        
+        &.shout 
+          h2.small
+            font-size 3em 
+          h2.text-left
+            text-align left
+
+          &.small 
+            h2 
+              font-size 5em
+          h3 
+            font-size 1.6em
+          
+          ul.green li
+            color k_yellow 
+          ul li 
+            float left
+            width 196px
+          
+          strong 
+            text-shadow 4px 4px black
+
+      .full .progress div 
+        border-color transparent transparent k_yellow
+      
+      .slide ol libefore, .slide ul li:before 
+        color k_yellow
+
+      .slide.patch
+        background-color #a5daed
+        .note
+          color #fd6866
+        a
+          color #af4ad9
+        // textcolor = #b250dc
+        // h2, h3
+        //  color textcolor
+        // color textcolor
+
+
+  body.list
+
+    header.caption
+      h1 = subject
+      p.en_font
+        Keith Yang
+
+    section#Cover.slide.cover: div
+        h2 程式設計教學之
+          br `span.en_font Python` 不完全解決方案
+        hr
+        / h3.author Keith Yang
+        h4.text-center
+          a.en_font href="https://yang.keitheis.org" Keith Yang
+
+        .coscup2014
+          img src="pictures/coscup.png" alt="COSCUP" 
+          ,
+          span.text 2014
+
+      -stylus
+        .slide
+          .coscup2014
+            margin-top: 2em
+            margin-right: -2em
+            float: right
+            img
+              position: relative
+              width: 200px
+            .text
+              color: #2082fb
+              font-family: monospace
+              font-size: 0.8em
+        .slide:after
+          padding: 38px 0px 0px
+          color: k_red
+          width: 54px
+          background: url('pictures/kribbon.svg') no-repeat scroll 0% 0% transparent
+
+        k_red = #c23236
+        k_yellow = #FBDC59
+        #Cover
+          h2
+            color: k_red
+            margin:40px 0
+            text-align:center
+            line-height: 1.2em
+            font-size:70px
+          .author
+            text-align:center
+            color: k_yellow
+            margin:10px 0 0
+        // .slide ul.py-list li
+        //  font-size: 0.6em
+        .slide .markpy
+          color: #7fd7c9
+
+    / section.slide: div
+      h2 `img src="pictures/coscup.png" alt="COSCUP"` `code 2014` 與 `code Python`
+      ul.py-list
+        li Cython - Making Python as Fast as `span.note C` by Mosky
+        li How KKBOX use mrjob to bring `span.note python, hadoop, AWS` together by aaronlin
+        li 用 Python 玩 LHC 公開`span.note 數據` / Python Meets LHC Open Data by YChao
+
+    / section.slide: div
+      h2 COSCUP 2014 與 Python（續）
+      ul.py-list
+        li 電腦不只會選土豆，還會幫你`span.note 選`新聞 by Andy Dai
+        li.note 將開源社群與精神帶入`span.note 教育` by weijr
+        li play `span.note data` ! play nlp ! by ChiaChi
+        li Scrapy: DIY creating machine-readable data we need before `span.note data` open. by Sammy Fung
+        li.next 以及這個講題（就我目前所知）
+
+    / section.slide: div
+      h2 COSCUP 2014 與 Python 簡略分析
+      ul
+        li Data: 3 + 0.5 篇
+        li Web: 0.5 + 0.5 篇（Scrapy & 選土豆）
+        li 教育與社群: 2 篇
+        li Performance: 1 篇
+        
+    section.slide.patch.shout: div
+      h2.small 這個背景色的投影片
+        br 是在 COSCUP 後補充的
+
+    section.slide.shout: div
+      h2 在這
+        br 最後
+        br Moment
+
+    section.slide.shout: div
+      h2.small 讓我們在 `img src="pictures/coscup.png" alt="COSCUP"`
+        br 與 `code Python`
+        br `span.next 為愛啟程`
+
+    section.slide.cover: div
+        img src="pictures/lovebus.jpg" width="100%" alt="Love Bus"
+
+    section.slide.cover: div
+        img src="pictures/mecollage.png" width="100%" alt="Photos of me"
+
+    section.slide: div
+      h2.en_font Keith Yang
+        ,
+        a.ref href='https://yang.keitheis.org' `code yang.keitheis.org`
+      h3
+        img.pull-right alt="biideal, Taipei.py, PyCon APAC" src="pictures/working.jpg" width="80%"
+      br
+      | @keitheis
+      ,
+      strong
+        a title="keitheis on Twitter" href="https://twitter.com/keitheis": i.fa.fa-twitter
+        ,
+        a title="ketheis on Bitbucket" href="https://bitbucket.org/keitheis": i.fa.fa-bitbucket
+        ,
+        a title="keitheis on Github" href="https://github.com/keitheis": i.fa.fa-github
+              
+
+    section.slide: div
+      h2 大綱
+      ul
+        li 程式教學熱潮
+        li 為什麼是 Python
+        li Python 在台灣
+        li 一起來玩吧
+
+    section.slide: div
+      h2 AP Computer Science
+      2014 年美國成長最快的大學（電腦）先修課程
+      img src="pictures/APCS growing.png" width="73%" alt=""
+      div
+        a.ref href="https://www.linkedin.com/today/post/article/20140717190306-1287-a-record-year-for-computer-science"
+          | * www.linkedin.com/today/post/article/20140717190306-1287-a-record-year-for-computer-science
+      -stylus
+        .slide
+          a.ref
+            font-size: 16px
+            border-bottom: 1px solid #FBDC59;
+          p.description
+            font-size: 0.6em
+
+    section.slide.cover.hourofcode: div
+      img src="pictures/Hour_Code.jpg" width="100%" alt="Hour of Code"
+      -stylus
+        .slide.hourofcode
+          background-color #005896
+
+    section.slide: div
+      h2 Hour of Code
+      backquote
+        在 2013 年 12 月開始的大規模宣傳活動，目的是為了向超過 1 千萬位的美國學生
+        介紹電腦科學，透過約一個小時的線上入門課程，讓學生對程式設計有初步的
+        了解，進而產生興趣。
+      .pull-right
+        img.code2 alt="Code.org" src="pictures/code2.png"
+      -stylus
+        .slide img.code2
+          margin: 30px
+          margin-right: -2em
+          width: 50%
+
+    section.slide: div
+      h2 Hour of Code (Cont.)
+      邀請名人拍攝短片，宣傳學習程式設計的重要性
+      ul
+        li 微軟共同創辦人比爾蓋茲（Bill Gates）
+        li Facebook 執行長佐克伯（Mark Zuckerberg）
+        li NBA 球員 Chris Bosh
+        li 知名藝人 will.i.am
+        li …
+
+    section.slide: div
+      h2 `a href="https://code.org" Code.org`
+      ul
+        li 推出學習編寫程式的計劃
+          br 「Make Your Own Flappy Bird」
+      img.pull-right src="pictures/codeangrybird.png" width="50%"
+      ul
+        li 當然也有 Angry Bird
+
+    section.slide: div
+      h2 `a href="https://code.org" Code.org` 以及 Python
+      a href="https://groklearning.com/hoc/"
+        img.codepython src="pictures/codepython.png" width="140%"
+      -stylus
+        .slide img.codepython
+          margin-left -20%
+
+    section.slide.shout: div
+      h2 MOOC
+
+    section.slide.shout: div
+      h2 一個
+        br 任意門
+        br 的概念
+      img.dimensiondoor alt="Dimension Door" src="pictures/dimensiondoor.png"
+      -stylus
+        .slide img.dimensiondoor
+          float right
+          margin-top -1em
+          margin-right -2em
+          width 25%
+
+    section.slide: div
+      h2
+        a href="https://en.wikipedia.org/wiki/Massive_open_online_course"
+          MOOC `span.note 開放式線上課程`
+      ul.pull-right
+        li 臺灣大學
+        li 臺灣師範大學
+        li 香港科技大學
+        li 北京清華大學
+        li Khan Academy
+        li ……（族繁不及備載）
+      ul
+        li Codecademy
+        li Udacity
+        li edX
+        li Coursera
+        li MITx
+        li Udemy
+
+    section.slide: div
+      h2 MOOC 的一些特色
+      ul
+        li 不只是呆坐昏睡看影片，而是有機會與電腦、老師及同學互動的上網學習。
+        li 學習不一定要在教室裡、不一定要嚴謹的課表。
+        li 不出門（？）就能學習世界各地頂尖教師的 MOOC 課程。
+
+    section.slide: div
+      h2 常聽到的 Python MOOC 課程
+      img.pull-right src="pictures/pythontrack.png" alt=""
+      ul
+        li Udacity: CS101
+        li Coursera: An Introduction to Interactive Programming in Python
+        li Codecademy: Python track
+
+    section.slide: div
+      h2.openhatch.text-center
+        img alt="OpenHatch" src="pictures/openhatch.jpg"
+      .pull-right
+        開放源始碼 x 教育的活動 @ 美國
+        ul
+          li 向大學生介紹開放源碼的工作坊
+          li 教授版本控制跟問題追蹤 (issue trackers) 工具
+          li 並指引他們完成首次貢獻
+      -stylus
+        .slide h2.openhatch
+          margin-top: -1em
+
+    section.slide.cover.bostonpythonworkshop: div
+      h2.text-center
+        a href="http://http://bostonpythonworkshop.com/"
+          img alt="Boston Python Workshop" src="pictures/boston_python_workshop.png" height="100%"
+      -stylus
+        .slide.bostonpythonworkshop img
+          margin-left 4em
+
+    section.slide.shout: div
+      h2 Code Club
+
+    section.slide: div
+      h2
+        img.codeclub alt="Code Club" src="pictures/codeclub.png"
+      p
+        Code Club 是一個英國志工組織，目標在結合志工和程式教材，以小學作為管道
+        舉辦程式社團，提供 9 到 11 歲的小朋友一個學習程式的機會。
+      -stylus
+        .slide h2 img.codeclub
+          margin-top -1.4em
+          margin-left -22%
+          width 140%
+
+    / section.slide: div
+      h2 連小叮噹也可以學
+      img src="pictures/"
+
+    section.slide: div
+      h2 Code Club Terms
+      img.pull-right.codeclubterms src="pictures/codeclubterms.jpg"
+      ul
+        li Scratch
+        li HTML & CSS
+        li Python
+      -stylus
+        .slide img.codeclubterms
+          margin-right 12%
+          transform rotate(30deg)
+          -webkit-transform rotate(30deg)
+
+    section.slide.patch.shout: div
+      h2 常見模式：
+        br Scratch -> Python
+        
+    section.slide: div
+      h2.text-center.codeworldwide
+        img alt="Code Club World" src="pictures/codeworldwide.svg"
+      Codecademy、Google 以及 Mozilla 一起和 Code Club 合作推出一項新計畫
+        Code Club World，希望將程式社團的概念推廣到全世界。
+      -stylus
+        .slide h2.codeworldwide
+          margin-top: -1.3em
+
+    / section.slide.cover: div
+      video(preload="auto"
+          width="100%"
+          autoplay="true"
+          src="pictures/hourofcode.mov")
+
+    / section.slide.cover: div
+      img alt="Python Offical Site" src="pictures/pythonsite.png" width="100%"
+
+    section.slide.shout: div
+      h2 Python
+
+    section.slide.shout: div
+      h2 非常適合新手
+        br 入門程式語言
+
+    section.slide: div
+      h2.code Python
+      img src="pictures/Top39-700.3.png" width="70%" alt=""
+      p.description
+        Most Popular Introductory Teaching Language at Top U.S. Universities
+
+    section.slide: div
+      h2.code Python
+      .note 目前美國頂尖大學裡最受歡迎的編程入門語言
+      h3 使用 Python 作為程式設計入門語言：
+      ul
+        li 電腦科學排名前 10 的學校裡，有 8 所學校
+        li 電腦科學排名前 39 的學校裡，有 27 個學校
+      div
+        a.ref href="http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities"
+          | * cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-lang...
+
+    section.slide.shout: div
+      h2 Python:
+        br 通用程式語言
+
+    section.slide.shout: div
+      h2 從隨手把玩
+        br 到極致工藝
+
+    section.slide.cover: div
+      h2
+        Python with ISS
+      img alt="" src="pictures/pythoniss.jpg"
+
+    section.slide.cover: div
+      h2 只要萬能
+        br 就可以上太空
+        br 的一個概念
+      img.flyspace alt="" src="pictures/flyspace.jpg" width="112%"
+
+    / section.slide.shout: div
+      h2 Python 下海底
+
+    section.slide.cover: div
+      h2
+        img alt="Raspberry Pi & Python" src="pictures/RaspberryPi_Python.jpg" width="100%"
+
+    / section.slide.shout: div
+      h2.small 小朋友都可以在 Raspberry Pi 上寫 Python
+
+    section.slide: div
+      h2 Cadence Meter with Raspberry Pi
+        br by Hsin-Chieh Jennifer Ma
+        br in Taiwan
+      <iframe width="560" height="315" src="http//www.youtube.com/embed/R0KIJ_nU9k0" frameborder="0" allowfullscreen></iframe>
+          / autoplay="true"
+      / video.cadencemeter(preload="auto"
+          width="80%"
+          autoplay="true"
+          src="pictures/R0KIJ_nU9k0.mp4")
+
+    section.slide.patch: div
+      h2 Cadence Meter with Raspberry Pi (Cont.)
+      p
+        在 Raspberry Pi 上用 Python 收集腳踏車的踏板轉速資料
+        然後用網頁瀏覽器直接觀測所得速據。
+      div
+        a.ref href="http://taipei.python.org.tw/"
+          | * Jennifer Ma 即將在 Taipei.py 給 Lightning Talk!
+
+
+    section.slide: div
+      h2 常見火力
+      ul.pull-right
+        li 嵌入式硬體控制
+        li 多媒體處理
+        li 跨平台、跨語言
+        li 程式設計教學
+        li 隨手小程式
+      ul
+        li 做網站
+        li 科學計算
+        li 系統佈署
+        li 資料探勘
+        li GUI 系統程式
+
+    section.slide.cover: div
+      img alt="Antigravity Python" src="pictures/antigravity.png" width="100%"
+
+    section.slide.shout: div
+      h2 Python
+        br 反地吸引力
+
+    section.slide.patch.shout: div
+      h2 Awesome Python
+        div.next
+          a href="https://github.com/vinta/awesome-python" Really on Gihtub
+          br by Vinta in Taiwan
+
+    section.slide.patch: div
+      h2 Awesome Python (Cont.)
+      ul
+        li 列舉各式各樣厲害的 Python 套件
+        li 依功能分類
+        li 沒看到你最愛的套件？歡迎發 pull-request
+
+    section.slide.psf: div
+      h2
+        img alt="Python Software Foundation" src="pictures/psf.png"
+      ul
+        li 支援全球各地 Python 社群與活動
+        li.next 隱藏關卡：
+          a href="http://www.openfoundry.org/tw/foss-news/8953-python-software-foundation-"
+            守護 Python 商標
+
+    section.slide.shout: div
+      h2 PyCon
+        br 全世界
+
+    section#pyconworld.slide.patch: div
+      ul.pull-right
+        li "PyCon" in the United States
+        li "EuroPython" in Europe
+        li "EuroSciPy" in Europe
+        li "Kiwi PyCon" in New Zealand
+        li "PyCon Asia Pacific" in Asia
+        li "PyCon AR" in Argentina
+        li "PyCon AU" in Australia
+        li "PythonBrasil" in Brazil
+        li "PyCon Canada" in Canada
+        li "PyCon China" in China
+        li "PyCon DE" in Germany
+        li "PyCon ES" in Spain
+        li "PyCon Finland" in Finland
+        li "PyCon FR" in France
+        li "PyCon KR" in Korea
+        li "PyCon India"
+        li "PyCon Iran"
+        li ...
+      ul
+        li "PyCon Ireland"
+        li "PyCon Italia" in Italy
+        li "PyCon Japan"
+        li "PyCon MY in Malaysia"
+        li "PyCon Philippines" in the Philippines
+        li "PyCon PL" in Poland
+        li "PyCon Russia" in Russia
+        li "PyCon Singapore" in Singapore
+        li "PyCon Sweden" in Sweden
+        li "PyCon Taiwan" in Taiwan
+        li "PyCon UK" in the United Kingdom
+        li "PyCon Ukraine" in Ukraine
+        li "PyCon Uruguay" in Uruguay
+        li "PyCon Venezuela" in Venezuela
+        li "PyCon ZA" in South Africa
+        li "PyData" conferences
+        li "SciPy" in the United States
+        li "SciPy.in" in India
+    -stylus
+      .slide#pyconworld
+        ul li
+          font-size 22px
+          line-height 26px
+
+    section.slide.patch: div
+      h2
+        a href="https://groups.google.com/forum/?hl=zh-CN#!topic/python-cn/l7dmLA198BM"
+          PyCon China 2014
+      img.pull-right src="pictures/pyconchina.png" alt="" width="26%"
+      ul
+        li 2014 年 11 月  8 日  半天 杭州
+        li 2014 年 11 月 15 日 全天 上海、珠海
+        li 2014 年 11 月 22 日 全天 北京
+      p.description
+        中国 Python 开发者大会 PyConChina2014 是在北京、上海、珠海、杭州等地举办
+        的针对 Python 开发者所举办的最盛大和权威的 Python 相关技术会议，
+        由 CPyUG 社区、 TopGeek 社区、北京 GDG 、上海 GDG 、珠海 GDG 、杭州 GDG 等，
+        致力于推动各类 Python 相关的技术在互联网、企业应用等领域的研发和应用。
+
+    section.slide.patch: div
+      h2
+        a href="https://pycon.jp/2014/"
+          PyCon Japan 2014
+      img.pull-right src="pictures/pyconjp2014-logo.png" alt="PyCon Japan 2014 in Tokyo" width="40%"
+      ul
+        li Tutorials September 12
+        li Conference September 13–14
+        li Sprints September 15
+
+    section.slide.shout: div
+      h2 Python
+        br 在台灣
+
+    section.slide.cover: div
+      a href="http://data.tainan.gov.tw"
+        img alt="Ckan in Tainan" src="pictures/ckan_tainan.png" width="100%"
+
+    section.slide.shout: div
+      h2.small `a href="http://ckan.org/" CKAN` 開放資料平台
+        br Powered by Python
+
+    section.slide.cover: div
+      img alt="MacDown by Tzu-ping Chung (@uranusjr)" src="pictures/macdown.png" width="100%"
+
+    section.slide.shout: div
+      h2.small `a href="http://macdown.uranusjr.com/" MacDown`
+        br 開源 Mac 軟體
+        br 輕鬆編輯 Markdown
+        br `span.note | (Python in build script)`
+
+    section.slide.shout: div
+      h2
+        a href="http://geekpy.org/"
+          img alt="蟒極客 Geek.py" src="pictures/geekpy.png" width="56%"
+
+    section.slide.patch: div
+      h2 蟒極客 Geek.py
+      ul
+        li 鼓勵學生自學的動機
+        li 參加程式比賽換獎品
+        ul
+          li.note 一點遊戲性質的誘因
+
+    section.slide: div
+      h2 2014 學生計算機夏令營
+      ul
+        li SITCON Summer Camp
+        li Open Source
+        li Community
+        ul
+          li.note Python 實作
+        
+    section.slide.shout: div
+      h2.small 中文程式設計
+        br Renyuan Lyu 呂仁園
+
+    section.slide.patch: div
+      h2 減少進入程式設計的障礙
+      ul
+        li 程式教育普及的另一個管道
+        li 有效降低初學者跟程式設計的心理距離
+      div
+        a.ref href="http://apython.blogspot.tw/2014/06/2014.html"
+          | * 更多在 apython.blogspot.tw/2014/06/2014.html
+
+    section.slide.cover: div
+      img alt="Python in Chinese" src="pictures/chinesepy.png" width="100%"
+
+    section.slide.shout: div
+      h2 這些只是
+        br 最近最近的的
+        br 九牛一毛
+
+    section.slide.cover: div
+      img alt="PyCon APAC 2014" src="pictures/pyconapac2014.png" width="100%"
+
+    section.slide.shout: div
+      h2.small PycTW 年度聚會
+        br 2008
+        br 2011
+
+    section.slide.shout: div
+      h2.small PyCon Taiwan
+        br 2012
+        br 2013
+
+    section.slide.pyconapacinfo: div
+      h2 PyCon APAC 2014 精彩、全面的議程
+      img.speakers src="pictures/pyconspeakers.png"
+      ul
+        ul
+          li `span.note SciPy` 議程 - 科學用 Python
+          li 教育座談、亞太平洋社群座談
+
+    section.slide.patch: div
+      h2 PyCon Taiwan & APAC 的重要性
+      ul
+        li 社群的年度大聚會
+        li 平常不會出現的機會
+        ul
+          li 台中 Taichung.py
+          li 桃園 Taoyuan.py
+        li 全台灣及亞太平洋的 Python 開發／使用／推廣者
+
+    section.slide.cover.pyconapacinfo: div
+      h2
+        img.info alt="PyCon APAC 2014 Info" src="pictures/pyconapac2014info.png" width="70%"
+      -stylus
+        .slide.pyconapacinfo
+          background-color #faf2e8
+          img.info
+            margin-left 3em
+
+    section.slide: div
+      h2 台灣 Python 在地社群
+      ul.pull-right
+        li 花蓮.py
+        li 台中 Taichung.py
+        li 桃園 Taoyuan.py
+        li （持續增加中）
+      ul
+        li 新竹 PyHUG
+        li 台北 Taipei.py
+        li 台南 Tainan.py
+        li 高雄 Kaohsiung.py
+
+    section.slide: div
+      h2 
+        a href="http://tw.pyladies.com"
+          img.pyladies src="pictures/pyladiestw.png" alt="PyLadies Taiwan"
+      h2.text-center 女生主持的程式設計社群
+      -stylus
+        .slide h2 img.pyladies
+          margin-top -104px
+          margin-left 2em
+          width 64%
+
+    section.slide.patch: div
+      h2 緣由
+      ul
+        li 「希望透過分享、教育與會議等活動的方式幫助更多女生
+          可以在 Python 社群中成為主動的參與者與領導者。」
+        li 每月聚會
+        li 也舉辦給新手的課程或工作坊
+
+    section.slide.shout: div
+      h2 台北
+        br Python 工作坊
+
+    section.slide: div
+      h2 台北 Python 工作坊
+      ul
+        li `span.code BIGBANG ** 2`
+        li | (PyLadies * Taipei.py)
+      img.taipeipywork src="pictures/taipeipywork.jpg" alt="Taipei Python Workshop"
+      -stylus
+        .slide img.taipeipywork
+          margin-top -30px
+          margin-left -20%
+          width 140%
+
+    section.slide.patch: div
+      h2 帶新手跨過入門的障礙
+      ul
+        li 安裝不起來
+        ul
+          li.note 花整個上午解決安裝問題
+        li 沒有人一起學玩
+        ul
+          li.note 分組學習，有人可詢
+        li 沒有方向的學習
+        ul
+          li.note Data, Web, GUI, Game 組
+
+    section.slide.shout: div
+      h2 男女比接近
+        br `span.note 1 : 1`
+
+    section.slide.shout: div
+      h2.small 一個學習性別尊重
+        br 溝通＆合作的環境
+
+    section.slide: div
+      h2 台北 - `a href="http://taipei.python.org.tw/" Taipei.py`
+      ul
+        li 隔週舉辦 Python Web Develop
+        li 例行月會：七月
+          ul
+            li How to use Mock in your project
+            li Tom 的音樂 show
+
+    section.slide.shout: div
+      h2.note Django Girls Taiwan
+        ,
+        a href="https://docs.google.com/forms/d/1FKhv8wliODwj_QLNMpDMZi4LJ_huxanJBTm8rqbILIc/viewform"
+          籌備中
+
+    section.slide.cover: div
+      a href="http://hualien.python.org.tw/" 
+        img src="pictures/hualienpy.jpg" width="100%" alt="花蓮.py"
+
+    section.slide: div
+      img.pull-right src="pictures/hualienpy_work.jpg" alt="" width="70%"
+      h2 `a href="http://hualien.python.org.tw/" 花蓮.py`
+      h2 好山好水
+      h2.next 好吃
+        br 又好玩
+
+    section.slide.shout: div
+      h2 新竹 - 
+        a href="http://www.meetup.com/pythonhug/"
+          img src="pictures/pyhug.png" alt="PyHUG"
+
+    section.slide.cover: div
+      h2
+        img.pyhugmeetup alt="PyHUG Meetup Photos" src="pictures/pyhugmeetup.jpg" width="100%"
+
+    section.slide.shout: div
+      h2.small 桃園 - Taoyuan.py
+        br Django Book 讀書會
+
+    section.slide: div
+      h2 台中 - `a href="http://www.meetup.com/Taichung-Python-Meetup/" Taichung.py`
+      ul
+        li 七月聚會：
+          br Django Tutorial v.s. Flask Tutorial
+          br `span.next | by your servant: me`
+        li 每週聚會 Python series discussions --
+          br transforming into a serious python programmer
+
+    section.slide.shout: div
+      h2 台南 -
+        a href="http://www.meetup.com/Tainan-py-Python-Tainan-User-Group/"
+          img alt="Tainan.py" src="pictures/tainanpy.png"
+        / br `span.next | (x MOSUT)`
+
+    section.slide.shout: div
+      h2 一個
+        br 更好吃
+        br 更好玩
+        br `span.next 的概念`
+
+    section.slide.shout: div
+      h2.small 高雄 - 
+        br
+          a href="https://www.facebook.com/groups/kaohsiungpy/"
+            Kaohsiung
+            br Python User Group
+
+    section.slide.patch: div
+      h2 總結
+      .note Python 在程式設計上的解決方案
+      ul
+        li 開源
+        li 社群
+        li 文化 `code.next import this`
+        li 火力
+        li 市場
+
+    section.slide.patch: div
+      h2 總結（續）
+      .note 已知的不完美
+      ul
+        li 不流行做系統底層的記憶體操作
+        li 最近才加入較完善的非同步的支援
+        li 在行動平台上的發展還有待努力
+        li 有些縣市的使用者群組還未成形
+        li 台灣業界、學界與政府的腳步還在跟上
+
+    section.slide.shout: div
+      h2 教 Python
+        br 學 Python
+
+    section.slide: div
+      h2 來 Python 社群玩
+      ul
+        li 精彩好玩的在地社群聚會
+        li Facebook Python Taiwan Group
+        li 搜尋「學 Python」
+        li 去 PyCon Taiwan 找個事做
+
+    / ご清聴ありがとうございました。ご質問下さい。
+    section.slide.shout: div
+      h2 謝謝.py 的概念
+
+    / p.badge
+      a href="#" `i.fa.fa-github.fa-large`
+
+    .progress: div
+
+    <!-- Copyright © 2014 Keith Yang -->
+    script src="${buildpath}/shower-core/shower.min.js"
+    / script src="${buildpath}/Han/js/han.js"
+    -if livereload
+      <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    -else
+      script
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-4248558-11', 'keitheis.github.io');
+        ga('send', 'pageview');
