@@ -496,7 +496,8 @@ html lang="zh-hants"
         br by Hsin-Chieh Jennifer Ma
         br in Taiwan
       p.text-center
-        img alt="" src="pictures/cadence.png" width="60%"
+        a href="https://www.youtube.com/watch?v=R0KIJ_nU9k0"
+          img alt="" src="pictures/cadence.png" width="60%"
       / <iframe width="560" height="315" src="http//www.youtube.com/embed/R0KIJ_nU9k0" frameborder="0" allowfullscreen></iframe>
           / autoplay="true"
       / video.cadencemeter(preload="auto"
