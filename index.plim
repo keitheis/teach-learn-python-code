@@ -2,7 +2,7 @@
 
 -py
   subject = u"程式設計教學之 Python 不完全解決方案"
-  livereload = False
+  livereload = True
   buildpath = 'buildpack/'
 
 
@@ -64,6 +64,9 @@ html lang="zh-hants"
         / .author 
           color black
           font-style italic
+          / &.small 
+            h2 
+              font-size 100px
         
         i  font-style normal 
         pre 
@@ -78,26 +81,22 @@ html lang="zh-hants"
           color rgb(248, 248, 242)
         
         code, .code 
-          font-size 1.2em
           font-family monospace
           color black
           background none
         
-        font-size 1.4em
+        font-size 36px
         .note 
           color black
         
         &.shout 
           h2.small
-            font-size 3em 
+            font-size 100px
           h2.text-left
             text-align left
 
-          &.small 
-            h2 
-              font-size 5em
           h3 
-            font-size 1.6em
+            font-size 44px
           
           ul.green li
             color k_yellow 
@@ -212,8 +211,7 @@ html lang="zh-hants"
         br 是在 COSCUP 後補充的
 
     section.slide.shout: div
-      h2 在這
-        br 最後
+      h2 在這最後
         br Moment
 
     section.slide.shout: div
@@ -283,9 +281,9 @@ html lang="zh-hants"
         img.code2 alt="Code.org" src="pictures/code2.png"
       -stylus
         .slide img.code2
-          margin: 30px
-          margin-right: -2em
-          width: 50%
+          margin 30px
+          margin-right -2em
+          width 50%
 
     section.slide: div
       h2 Hour of Code (Cont.)
@@ -319,8 +317,7 @@ html lang="zh-hants"
 
     section.slide.shout: div
       h2 一個
-        br 任意門
-        br 的概念
+        br 任意門的概念
       img.dimensiondoor alt="Dimension Door" src="pictures/dimensiondoor.png"
       -stylus
         .slide img.dimensiondoor
@@ -538,7 +535,7 @@ html lang="zh-hants"
         br 反地吸引力
 
     section.slide.patch.shout: div
-      h2 Awesome Python
+      h2.small Awesome Python
         div.next
           a href="https://github.com/vinta/awesome-python" Really on Gihtub
           br by Vinta in Taiwan
@@ -693,7 +690,7 @@ html lang="zh-hants"
       img alt="Python in Chinese" src="pictures/chinesepy.png" width="100%"
 
     section.slide.shout: div
-      h2 這些只是
+      h2.small 這些只是
         br 最近最近的的
         br 九牛一毛
 
@@ -702,13 +699,11 @@ html lang="zh-hants"
 
     section.slide.shout: div
       h2.small PycTW 年度聚會
-        br 2008
-        br 2011
+        br 2008, 2011
 
     section.slide.shout: div
       h2.small PyCon Taiwan
-        br 2012
-        br 2013
+        br 2012, 2013
 
     section.slide.pyconapacinfo: div
       h2 PyCon APAC 2014 精彩、全面的議程
@@ -832,10 +827,10 @@ html lang="zh-hants"
       h2.next 好吃
         br 又好玩
 
-    section.slide.shout: div
-      h2 新竹 - 
-        a href="http://www.meetup.com/pythonhug/"
-          img src="pictures/pyhug.png" alt="PyHUG"
+    section.slide: div
+      h2 新竹
+      a href="http://www.meetup.com/pythonhug/"
+        img src="pictures/pyhug.png" alt="PyHUG"
 
     section.slide.cover: div
       h2
@@ -854,24 +849,23 @@ html lang="zh-hants"
         li 每週聚會 Python series discussions --
           br transforming into a serious python programmer
 
-    section.slide.shout: div
-      h2 台南 -
-        a href="http://www.meetup.com/Tainan-py-Python-Tainan-User-Group/"
-          img alt="Tainan.py" src="pictures/tainanpy.png"
+    section.slide: div
+      h2 台南
+      a href="http://www.meetup.com/Tainan-py-Python-Tainan-User-Group/"
+        img alt="Tainan.py" src="pictures/tainanpy.png"
         / br `span.next | (x MOSUT)`
 
     section.slide.shout: div
-      h2 一個
-        br 更好吃
-        br 更好玩
-        br `span.next 的概念`
+      h2 一個更好吃
+        br 更好玩的概念
 
-    section.slide.shout: div
-      h2.small 高雄 - 
-        br
-          a href="https://www.facebook.com/groups/kaohsiungpy/"
-            Kaohsiung
-            br Python User Group
+    section.slide: div
+      h2.small 高雄
+      img.pull-right alt="" src="pictures/Kaohsiung.png" width="50%"
+      h3
+        a href="https://www.facebook.com/groups/kaohsiungpy/"
+          Kaohsiung
+          br Python User Group
 
     section.slide.patch: div
       h2 總結
