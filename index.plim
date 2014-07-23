@@ -48,13 +48,14 @@ html lang="zh-hants"
 
         background-color k_white
         color k_red
+        font-size 32px
         h2 
           a img 
             text-decoration none
           
           color k_red
           &.footnote 
-            font-size 32px
+            font-size 30px
         
         // h3  color k_white 
         hr 
@@ -85,7 +86,6 @@ html lang="zh-hants"
           color black
           background none
         
-        font-size 36px
         .note 
           color black
         
@@ -263,7 +263,7 @@ html lang="zh-hants"
             font-size: 16px
             border-bottom: 1px solid #FBDC59;
           p.description
-            font-size: 0.6em
+            font-size: 20px
 
     section.slide.cover.hourofcode: div
       img src="pictures/Hour_Code.jpg" width="100%" alt="Hour of Code"
