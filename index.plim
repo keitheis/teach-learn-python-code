@@ -1,7 +1,7 @@
 -namespace module="plimsolls.formatters.code2html" name="code2html"
 
 -py
-  subject = u"程式設計教學之 Python 不完全解決方案"
+  subject = u"Python Quest in Taiwan"
   livereload = False
   buildpath = 'buildpack/'
 
